@@ -7,7 +7,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import br.com.caju.authorization.adapter.in.web.AccountController;
-import br.com.caju.authorization.application.service.AccountService;
+import br.com.caju.authorization.application.port.in.AccountUseCase;
 import java.util.UUID;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,7 +25,7 @@ class AccountControllerTest {
   private MockMvc mockMvc;
 
   @MockBean
-  private AccountService accountUseCase;
+  private AccountUseCase accountUseCase;
 
   private UUID accountId;
 
