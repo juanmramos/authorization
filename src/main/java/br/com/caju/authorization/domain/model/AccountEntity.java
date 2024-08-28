@@ -31,6 +31,8 @@ public class AccountEntity {
 
   private UUID uuid;
 
+  private String AccountId;
+
   private String agency;
 
   private String accountNumber;

@@ -1,6 +1,5 @@
 package br.com.caju.authorization.application.service;
 
-import br.com.caju.authorization.application.port.in.AccountUseCase;
 import br.com.caju.authorization.application.port.out.AccountPersistencePort;
 import br.com.caju.authorization.domain.enums.CategoryEnum;
 import br.com.caju.authorization.domain.model.MerchantRuleEntity;
@@ -9,11 +8,10 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class AccountService implements AccountUseCase {
+public class AccountService {
 
   private final AccountPersistencePort accountPersistencePort;
 
-  @Override
   public boolean processTransaction(String accountId, double amount, String merchant, String mcc) {
     var accountOptional = accountPersistencePort.findById(accountId);
     if (accountOptional.isPresent()) {
